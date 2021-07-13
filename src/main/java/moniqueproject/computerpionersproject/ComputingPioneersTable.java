@@ -16,9 +16,9 @@ import java.util.UUID;
  *
  * @author 44773
  */
-public class ComputingPioneersTable {
+/*public class ComputingPioneersTable {
 
-    private static int menuData() {
+   /* private static int menuData() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -172,7 +172,7 @@ public class ComputingPioneersTable {
 
     }
 
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         ComputingPioneersTable tableGenerator = new ComputingPioneersTable();
 
         List<String> headersList = new ArrayList<>(); 
@@ -238,5 +238,5 @@ public class ComputingPioneersTable {
         return Selected;
         
     }
-}
+}*/
 

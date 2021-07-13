@@ -13,7 +13,7 @@ import java.util.Scanner;
  */
 public class AppMenu {
     
-    public void run(){
+    /*public void run(){
         Q1RevStack q1 = new Q1RevStack();
         Q2TrafficSim q2 = new Q2TrafficSim();
         Q3TicketSim q3 = new Q3TicketSim();
@@ -86,7 +86,7 @@ public class AppMenu {
         System.out.print("Choose one of the options above: ");
         choice = theInput.nextLine();
         return choice;
-    }
+    }*/
 
 }
 

@@ -38,29 +38,34 @@ public class ComputingPioneers {
         return invention;
     }
     
-public  void main(String[] args) throws IOException {
+public  static void main(String[] args) throws IOException {
+    System.out.println("ComputerPioneers.txt");
+    
+    //Stack stack = new Stack();
+    //Queues queue = new Queues();
 
-    Stack stack = new Stack();
-    Queues queue = new Queues();
-
-    File stackfile = new File("stack.txt");
+    File stackfile = new File("ComputerPioneers.txt");
 
     if (!stackfile.exists()) {
         stackfile.createNewFile();
+        System.out.println("File does not exist");
     } else {
         System.out.println("File is done");
     }
     FileReader r = new FileReader(stackfile);
     BufferedReader reader = new BufferedReader(r);
 
-    String line = null;
+    String s;
 
     // First, split to be converted
-    reader.readLine();
+    //reader.readLine();
 
-    while ((line = reader.readLine()) != null) {
+    while ((s = reader.readLine()) != null) {
+        //System.out.println(lin);
+        System.out.println("Reading lines");
+    }
 
-        String[] splitLine = line.trim().split(";");
+       /* String[] splitLine = line.trim().split(";");
 
         if (splitLine.length == 2)
             stack.Push(new Data(splitLine[0], splitLine[1]));
@@ -70,10 +75,10 @@ public  void main(String[] args) throws IOException {
         
             obj1.convertToDec(n);
             obj1.convertToChar(n);
-    }
+    }*/
     reader.close();
 
-    File queuefile = new File("queue.txt");
+    /*File queuefile = new File("queue.txt");
 
     if (!queuefile.exists()) {
         queuefile.createNewFile();
@@ -96,7 +101,7 @@ public  void main(String[] args) throws IOException {
     }
 
     read.close();
-
+*/
 }
     
     

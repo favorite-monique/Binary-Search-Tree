@@ -22,11 +22,11 @@ public class Sorting {
     
     @SuppressWarnings("empty-statement")
     public static void main(String[] args) throws FileNotFoundException, IOException {
+        int temp = 0;
         
-        int size = array.length;
+        /*int size = array.length;
         int[] array = null;
         int i = 0;
-        int temp = 0;
         
         for(i < 1; i < array.length; i++) do{
         array[] = temp[i];
@@ -247,7 +247,7 @@ public class Sorting {
         }
 
         System.out.println(tableGenerator.generateTable(headersList, rowsList));
-    }
+    }*/
 }
 
 }
