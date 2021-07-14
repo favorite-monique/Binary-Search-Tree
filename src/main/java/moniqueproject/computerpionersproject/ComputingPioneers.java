@@ -7,8 +7,19 @@ package moniqueproject.computerpionersproject;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
+import static java.lang.module.ModuleDescriptor.read;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
+import java.util.Scanner;
+import static javax.imageio.ImageIO.read;
 import javax.xml.crypto.Data;
 
 /**
@@ -38,73 +49,70 @@ public class ComputingPioneers {
         return invention;
     }
     
-public  static void main(String[] args) throws IOException {
-    System.out.println("ComputerPioneers.txt");
+public static void main(String[] args)throws Exception
+  {
+    System.out.println("./src/main/java/moniqueproject/computerpioners/ComputerPioneers.txt");
     
     //Stack stack = new Stack();
     //Queues queue = new Queues();
 
-    File stackfile = new File("ComputerPioneers.txt");
+    File file = new File("./src/main/java/moniqueproject/computerpioners/ComputerPioneers.txt");
 
-    if (!stackfile.exists()) {
+    /*if (!stackfile.exists()) {
         stackfile.createNewFile();
         System.out.println("File does not exist");
     } else {
         System.out.println("File is done");
-    }
-    FileReader r = new FileReader(stackfile);
+    }*/
+    FileReader r = new FileReader(file);
     BufferedReader reader = new BufferedReader(r);
 
-    String s;
+    String s = null, line = null;
 
     // First, split to be converted
     //reader.readLine();
-
-    while ((s = reader.readLine()) != null) {
-        //System.out.println(lin);
-        System.out.println("Reading lines");
+    //System.out.println("line is: " + reader.readLine());
+    int counter = 1;
+    while ((line = reader.readLine()) != null) {
+        s += line;
+        counter++;
+        System.out.println(s);
+        System.out.println(counter + s + " ");
     }
+   
+  }
 
-       /* String[] splitLine = line.trim().split(";");
+    
 
+        /* String[] splitLine = line.trim().split(";");
         if (splitLine.length == 2)
-            stack.Push(new Data(splitLine[0], splitLine[1]));
-            stack.pop(new Data(splitLine[0], splitLine[1]));
-            
-            Stack obj1 = new Stack();
-        
-            obj1.convertToDec(n);
-            obj1.convertToChar(n);
-    }*/
-    reader.close();
-
-    /*File queuefile = new File("queue.txt");
-
-    if (!queuefile.exists()) {
+        stack.Push(new Data(splitLine[0], splitLine[1]));
+        stack.pop(new Data(splitLine[0], splitLine[1]));
+        Stack obj1 = new Stack();
+        obj1.convertToDec(n);
+        obj1.convertToChar(n);
+        }*/
+        //  reader.close();
+        /*File queuefile = new File("queue.txt");
+        if (!queuefile.exists()) {
         queuefile.createNewFile();
-    } else {
+        } else {
         System.out.println("File is done");
-    }
-
-    BufferedReader read = null;
-    read = new BufferedReader(new FileReader(queuefile));
-
-    // Skip headline
-    read.readLine();
-
-    while ((line = read.readLine()) != null) {
-
+        }
+        BufferedReader read = null;
+        read = new BufferedReader(new FileReader(queuefile));
+        // Skip headline
+        read.readLine();
+        while ((line = read.readLine()) != null) {
         String[] splitLine = line.trim().split(",");
-
         if (splitLine.length == 3)
-            queue.insert(new Data(splitLine[0], splitLine[1], splitLine[2]));
-    }
+        queue.insert(new Data(splitLine[0], splitLine[1], splitLine[2]));
+        }
+         */
+  }
 
-    read.close();
-*/
-}
+
+  
     
     
     
-    
-}
