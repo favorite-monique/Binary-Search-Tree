@@ -5,13 +5,17 @@
  */
 package moniqueproject.computerpionersproject;
 
-import java.util.Scanner;
+//import java.util.Scanner;
 
 /**
  *
  * @author 44773
  */
-public class AppMenu {
+/*public class AppMenu {
+
+    void run() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     /*public void run(){
         Q1RevStack q1 = new Q1RevStack();
@@ -88,5 +92,4 @@ public class AppMenu {
         return choice;
     }*/
 
-}
 
