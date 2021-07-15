@@ -8,8 +8,9 @@ package moniqueproject.computerpionersproject;
 /**
  *
  * @author 44773
+ * @param <E>
  */
-public interface IQueueCP {
+public interface IQueueCP<E> {
      /**
      * This method will be used to construct a queue
      */

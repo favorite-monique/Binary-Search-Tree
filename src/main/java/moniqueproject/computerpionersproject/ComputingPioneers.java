@@ -1,3 +1,4 @@
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -7,20 +8,10 @@ package moniqueproject.computerpionersproject;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import static java.lang.module.ModuleDescriptor.read;
-import java.util.Collections;
-import java.util.Iterator;
+import static java.lang.Math.E;
 import java.util.LinkedList;
-import java.util.List;
 import java.util.Queue;
-import java.util.Scanner;
-import static javax.imageio.ImageIO.read;
-import javax.xml.crypto.Data;
 
 /**
  *
@@ -76,6 +67,7 @@ public class ComputingPioneers {
      * @param args
      * @throws Exception
      */
+    @SuppressWarnings("unchecked")
     public static void main(String[] args)throws Exception 
   {
       System.out.println("./src/main/java/moniqueproject/computerpionersproject/ComputerPioneers.txt");
@@ -84,42 +76,54 @@ public class ComputingPioneers {
           stackfile.createNewFile();
           System.out.println("File does not exist");
       } else {
-          System.out.println("File is done");
+         ADTQueueCP queue;
+          queue = new ADTQueueCP();
+         
+         queue.createQueue();
+         
+         System.out.println("Queue is empty with" + queue.isEmpty());
+         System.out.println("File is done");
       }
       FileReader r = new FileReader(stackfile);
       BufferedReader reader = new BufferedReader(r);
       
       String s, line = null;
-      int counter = 1;
+      //int counter = 1;
       while((s = reader.readLine()) !=null) {
-          counter++;
-          System.out.println(counter + "." + s);
+          //counter++;
+          queue.enqueue(s);
+          //System.out.println(counter + "." + s);
       }
+      ADTQueueCP queue;
+      System.out.println("This is the queue");
+      queue.displayQueue();
   }
+    StackCPLab.classStackCPLab();
+ }
 
     /**
      *
-     * @param s
+     * @param 
      * @return
      */
-    public static String[] getWords(String s) {
+    /*public static String[] getWords(String s) {
           s = s.replaceAll("\\(0.9", "");
           s = s.replaceAll("\\s+", "");
           s = s.replaceAll("\\p(Punct)", "");
           String[] values;
           String line = null;
-          values = line.split(";");
+         // values = line.split(";");
           Queue<String> ADTQueueCP;
           ADTQueueCP = new LinkedList<>();
           ADTQueueCP.add(s);
-          System.out.println(values[1] + values[2]);
-          return s.split(";");
-         
+          System.out.println(ADTQueueCP.add(s));
+          //System.out.println(values[1] + values[2]);
+          //return s.split(";");
+        return null;
 
         
     } 
-  
-}
+
     
       
 

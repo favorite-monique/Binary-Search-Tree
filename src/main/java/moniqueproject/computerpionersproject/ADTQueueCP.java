@@ -14,8 +14,9 @@ import static javax.print.attribute.standard.MediaSizeName.E;
 /**
  *
  * @author 44773
+ * @param <E>
  */
-public class ADTQueueCP implements IQueueCP<E>{
+public class ADTQueueCP<E> implements IQueueCP<E>{
     /**
      * Use this private method to check that an integer value
      * is within a set range.
@@ -43,6 +44,7 @@ public class ADTQueueCP implements IQueueCP<E>{
     /**
      * Default constructor
      */
+    @SuppressWarnings("unchecked")
     ADTQueueCP() {
         this.MAXELEMENTS = DEFAULTMAXELEMENTS;
         this.aQueue = (E[])new Object[this.MAXELEMENTS];
@@ -56,6 +58,7 @@ public class ADTQueueCP implements IQueueCP<E>{
      * queue will be created using the DEFAULTMAXELEMENTS value (25)
      * @param cpSize size of the array
      */
+    @SuppressWarnings("unchecked")
     ADTQueueCP( int cpSize ) {
         if ( !inRange( cpSize, 1, DEFAULTMAXELEMENTS ) ) {
             System.out.println("Size of array not allowed! Assuming " + DEFAULTMAXELEMENTS );
@@ -71,9 +74,11 @@ public class ADTQueueCP implements IQueueCP<E>{
     /**
      *
      */
+    @Override
+    @SuppressWarnings("unchecked")
     public void createQueue() {
         this.aQueue = (E[])new Object[this.MAXELEMENTS];
-        this.numberOfQueueElements = 0;
+        this.numberOfQueueElements = 14;
         this.front = 0;   
         this.rear = -1;     
     }
@@ -82,6 +87,8 @@ public class ADTQueueCP implements IQueueCP<E>{
      *
      * @param e
      */
+
+    @Override
     public void enqueue(E e) {
         if ( isFull() ) {
             System.out.println(String.format("Array is full, only %3d elements allowed", this.MAXELEMENTS));
@@ -93,7 +100,7 @@ public class ADTQueueCP implements IQueueCP<E>{
         }
     }
 
-    private boolean inRange(int raSize, int i, int DEFAULTMAXELEMENTS) {
+    private boolean inRange(int cpSize, int i, int DEFAULTMAXELEMENTS) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -101,14 +108,13 @@ public class ADTQueueCP implements IQueueCP<E>{
      *
      * @return
      */
-    private boolean isFull() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+   
 
     /**
      *
      * @return
      */
+    @Override
     public E dequeue() {
         if ( isEmpty() ) {
             throw new NullPointerException("Can't dequeue queue its Empty!!");
@@ -125,14 +131,12 @@ public class ADTQueueCP implements IQueueCP<E>{
      *
      * @return
      */
-    private boolean isEmpty() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 
     /**
      *
      * @return
      */
+    @Override
     public E peek() {
         if ( isEmpty() ) {
             throw new NullPointerException("Can't peek at front item as the queue is Empty!!");
@@ -141,10 +145,12 @@ public class ADTQueueCP implements IQueueCP<E>{
         }
     }
 
+    @Override
     public boolean isEmpty() {
         return ( this.getQueueSize() == 0 );
     }
     
+    @Override
     public boolean isFull() {
         return ( this.numberOfQueueElements == this.MAXELEMENTS );
     }
@@ -172,7 +178,7 @@ public class ADTQueueCP implements IQueueCP<E>{
         {
             int qPos = this.front;
             for(int element = 0; element < this.numberOfQueueElements; element++) {
-                sb.append( this.aQueue[ qPos ] + "\n");
+                sb.append(this.aQueue[ qPos ]).append("\n");
                 qPos = (qPos + 1)% this.MAXELEMENTS;
             }
         }
@@ -183,8 +189,9 @@ public class ADTQueueCP implements IQueueCP<E>{
      *
      * @return
      */
-    private int getQueueSize() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public int getQueueSize() {
+        return numberOfQueueElements;
+        
     }
 }
 
